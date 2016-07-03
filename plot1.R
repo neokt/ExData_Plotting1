@@ -28,7 +28,7 @@ dataset_sub <- subset(dataset, Date == "1/2/2007" | Date == "2/2/2007")
 
 ## Converting other variables for plotting
 
-dataset_sub$Global_active_power <- as.numeric(dataset_sub$Global_active_power) * 2 / 1000
+dataset_sub$Global_active_power <- as.numeric(as.character(dataset_sub$Global_active_power))
 
 ## Initializing plot settings
 

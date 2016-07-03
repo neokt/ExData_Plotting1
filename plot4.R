@@ -30,10 +30,11 @@ dataset_sub$DateTime <- strptime(dataset_sub$DateTime, "%d/%m/%Y %H:%M:%S")
 
 ## Converting other variables for plotting
 
-dataset_sub$Global_active_power <- as.numeric(dataset_sub$Global_active_power) * 2 / 1000
-dataset_sub$Sub_metering_1 <- as.character(dataset_sub$Sub_metering_1)
-dataset_sub$Sub_metering_2 <- as.character(dataset_sub$Sub_metering_2)
-dataset_sub$Sub_metering_3 <- as.character(dataset_sub$Sub_metering_3)
+dataset_sub$Global_active_power <- as.numeric(as.character(dataset_sub$Global_active_power))
+dataset_sub$Sub_metering_1 <- as.numeric(as.character(dataset_sub$Sub_metering_1))
+dataset_sub$Sub_metering_2 <- as.numeric(as.character(dataset_sub$Sub_metering_2))
+dataset_sub$Sub_metering_3 <- as.numeric(as.character(dataset_sub$Sub_metering_3))
+dataset_sub$Voltage <- as.numeric(as.character(dataset_sub$Voltage))
 
 # Initializing plot settings
 
@@ -49,12 +50,12 @@ plot(dataset_sub$DateTime, dataset_sub$Global_active_power, type = "l",
 
 ### Top right plot
 
-plot(dataset_sub$DateTime, as.character(dataset_sub$Voltage), type = "l", 
+plot(dataset_sub$DateTime, dataset_sub$Voltage, type = "l", 
      xlab = "datetime", ylab = "Voltage")
 
 ### Bottom left plot
 
-plot(dataset_sub$DateTime, y = dataset_sub$Sub_metering_1, type = "n", xlab = NA, 
+plot(dataset_sub$DateTime, dataset_sub$Sub_metering_1, type = "n", xlab = NA, 
      ylab = "Energy sub metering")
 
 lines.default(dataset_sub$DateTime, dataset_sub$Sub_metering_1, col = "black")

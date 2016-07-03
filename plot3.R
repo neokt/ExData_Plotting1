@@ -32,9 +32,9 @@ dataset_sub$DateTime <- strptime(dataset_sub$DateTime, "%d/%m/%Y %H:%M:%S")
 # dataset_sub$Time <- strptime(dataset_sub$Time, "%H:%M:%S")
 
 ## Converting other variables for plotting
-dataset_sub$Sub_metering_1 <- as.character(dataset_sub$Sub_metering_1)
-dataset_sub$Sub_metering_2 <- as.character(dataset_sub$Sub_metering_2)
-dataset_sub$Sub_metering_3 <- as.character(dataset_sub$Sub_metering_3)
+dataset_sub$Sub_metering_1 <- as.numeric(as.character(dataset_sub$Sub_metering_1))
+dataset_sub$Sub_metering_2 <- as.numeric(as.character(dataset_sub$Sub_metering_2))
+dataset_sub$Sub_metering_3 <- as.numeric(as.character(dataset_sub$Sub_metering_3))
 
 ## Initializing plot settings
 

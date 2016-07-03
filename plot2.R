@@ -30,7 +30,7 @@ dataset_sub$DateTime <- strptime(dataset_sub$DateTime, "%d/%m/%Y %H:%M:%S")
 
 ## Converting other variables for plotting
 
-dataset_sub$Global_active_power <- as.numeric(dataset_sub$Global_active_power) * 2 / 1000
+dataset_sub$Global_active_power <- as.numeric(as.character(dataset_sub$Global_active_power))
 
 ## Initializing plot settings
 
