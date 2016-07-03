@@ -22,7 +22,6 @@ if(!file.exists(file)) {
 dataset <- read.table(file, header = TRUE, sep = ";")
 
 ## Subset the dataset for required dates
-## Update classes of Date and Time variables for plotting
 
 dataset_sub <- subset(dataset, Date == "1/2/2007" | Date == "2/2/2007")
 

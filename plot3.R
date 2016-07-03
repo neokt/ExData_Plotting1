@@ -28,9 +28,6 @@ dataset_sub <- subset(dataset, Date == "1/2/2007" | Date == "2/2/2007")
 dataset_sub$DateTime <- paste(dataset_sub$Date, dataset_sub$Time)
 dataset_sub$DateTime <- strptime(dataset_sub$DateTime, "%d/%m/%Y %H:%M:%S")
 
-# dataset_sub$Date <- as.Date(dataset_sub$Date, "%d/%m/%Y")
-# dataset_sub$Time <- strptime(dataset_sub$Time, "%H:%M:%S")
-
 ## Converting other variables for plotting
 dataset_sub$Sub_metering_1 <- as.numeric(as.character(dataset_sub$Sub_metering_1))
 dataset_sub$Sub_metering_2 <- as.numeric(as.character(dataset_sub$Sub_metering_2))
